@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
+*.env
+.venv/
+venv/
+# fichiers régénérés par le notebook
+app/data/riviera_du_levant_cleaned.csv
+app/data/*.pkl
+app/data/*.png
