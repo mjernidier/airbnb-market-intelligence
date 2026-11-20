@@ -2,6 +2,8 @@
 
 Estimation du revenu annuel d'une location courte durée sur la Riviera du Levant (Le Gosier, Sainte-Anne, Saint-François), en Guadeloupe. Projet de fin de formation Data Scientist (DataScientest), réalisé par Marvin Jernidier.
 
+Application en ligne : https://airbnb-market-intelligence.streamlit.app/
+
 ## Objectif
 
 Un investisseur ou un propriétaire se pose trois questions avant de se lancer : quelles caractéristiques d'un logement sont associées aux meilleurs revenus, quels équipements méritent l'investissement, et combien peut rapporter un bien d'un profil donné. Le projet y répond à partir de données de marché, avec un modèle de régression et une application de démonstration.
@@ -60,6 +62,8 @@ Python 3.10 ou plus récent.
     pip install -r requirements.txt
 
 ## Lancer l'application
+
+L'application est déployée sur Streamlit Community Cloud : https://airbnb-market-intelligence.streamlit.app/. Pour la lancer en local :
 
     cd app
     streamlit run app.py
