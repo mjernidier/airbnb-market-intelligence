@@ -75,7 +75,8 @@ MAE_MODELE = IMB["xgb_mae"]   # erreur mesurée par validation croisée imbriqu�
 st.sidebar.title("Airbnb Market Intelligence")
 st.sidebar.caption("Riviera du Levant, Guadeloupe · Le Gosier, Sainte-Anne, Saint-François")
 page = st.sidebar.radio("Navigation", ["1 · Le projet", "2 · Market Explorer",
-                                       "3 · Modèles", "4 · Property Simulator", "5 · Limites"])
+                                       "3 · Modèles", "4 · Property Simulator",
+                                       "5 · Audit des titres (Jev)", "6 · Limites"])
 st.sidebar.divider()
 st.sidebar.caption(f"{len(df):,} annonces · source AirROI · modèles {origine}".replace(",", " "))
 st.sidebar.caption("Marvin Jernidier · MJ Metrix")
@@ -287,7 +288,90 @@ elif page.startswith("4"):
     st.warning("Ces écarts sont des **associations statistiques** observées sur des annonces existantes, pas des effets "
                "causaux garantis. Ils orientent une décision ; ils ne remplacent pas un calcul de rentabilité avec les coûts.")
 
-# ------------------------------------------------------------------ 5. LIMITES
+# ------------------------------------------------------------------ 5. AUDIT DES TITRES (JEV)
+elif page.startswith("5"):
+    st.title("Audit sémantique des titres avec Jev")
+    st.subheader("Ce que disent les titres d'annonces, et ce que cela pèse dans la prédiction du revenu")
+    JR = json.loads((ART / "jev_resultats.json").read_text(encoding="utf-8"))
+    JT = pd.read_csv(ART / "jev_titres.csv", encoding="utf-8-sig")
+    V = pd.DataFrame(JR["variantes"])
+    gain = np.array(JR["plis"]["officiel_plus_jev"]["r2"]) - np.array(JR["plis"]["officiel"]["r2"])
+    c = st.columns(4)
+    c[0].metric("Titres classés", f"{JR['titres']:,}".replace(",", " "), "5 questions chacun", delta_color="off")
+    c[1].metric("Durée totale", f"{JR['duree_s']} s", "appels en parallèle", delta_color="off")
+    c[2].metric("Coût total", f"{JR['cout_usd']:.2f} $".replace(".", ","), f"{JR['jetons']:,} jetons".replace(",", " "), delta_color="off")
+    c[3].metric("Gain de R² avec Jev", f"{gain.mean():+.3f}".replace(".", ","),
+                f"bruit ± {gain.std():.3f}".replace(".", ","), delta_color="off")
+
+    st.markdown("""
+Jev, le modèle de TypeSafe, ne rédige pas de texte : il répond à des questions fermées et renvoie une probabilité
+calibrée pour chaque réponse. Chaque titre a reçu cinq questions : **gamme** (luxe, confort, simple), **vue mer**,
+**proximité de la plage**, **clientèle visée** (famille, couple, groupe) et **attrait** du titre (de 0 à 4).
+Les probabilités deviennent huit variables, testées avec le protocole officiel, sans rien changer d'autre.
+""")
+    st.markdown("**Avant / après, en validation croisée imbriquée** (" + JR["protocole"] + ")")
+    tab = pd.DataFrame({"Variante": V["nom"], "Variables": V["variables"],
+                        "R²": [f"{a:.3f} ± {b:.3f}".replace(".", ",") for a, b in zip(V["r2"], V["r2_std"])],
+                        "MAE": [eur(m) for m in V["mae"]]})
+    st.dataframe(tab, hide_index=True)
+    a, b = st.columns(2)
+    a.success("**Jev remplace la liste de mots-clés sans rien perdre** : même R² que la liste écrite et ajustée à la main, "
+              "avec cinq questions en langage courant et 20 secondes de calcul.")
+    b.warning(f"**Ajouté aux mots-clés, le gain n'est pas démontré** : {gain.mean():+.3f} de R² en moyenne, "
+              f"{int((gain > 0).sum())} plis gagnés sur {len(gain)}, sous la dispersion de l'écart (± {gain.std():.3f}). "
+              "Le modèle officiel reste inchangé.".replace("0.", "0,"))
+
+    st.divider()
+    st.markdown("**Jev lit le sens, là où les mots-clés lisent les lettres**")
+    st.dataframe(pd.DataFrame([
+        {"Titre": "Ti Punch – Pied dans l'eau & swimming pool in Gosier", "Mots-clés": "plage : non (motif « pieds dans » au pluriel)", "Jev": "plage 0,89"},
+        {"Titre": "Feet in the lagoon", "Mots-clés": "plage : non (motif « feet in the water »)", "Jev": "plage 0,87"},
+        {"Titre": "A stone's throw from the sea, great view and private beach", "Mots-clés": "vue mer : non", "Jev": "vue mer 0,90"},
+        {"Titre": "Solumi, prestigious mansion", "Mots-clés": "haut de gamme : non", "Jev": "luxe 1,00"},
+    ]), hide_index=True)
+
+    st.markdown("**Ce que les titres oublient de dire**")
+    piscine_tue = int(((JT["pool"] == 1) & (JT["t_pool"] == 0)).sum())
+    mer_tue = int(((JT["waterfront"] == 1) & (JT["j_plage"] < 0.5) & (JT["j_vue_mer"] < 0.5)).sum())
+    c = st.columns(2)
+    c[0].metric("Piscine non citée dans le titre", f"{piscine_tue} sur {int(JT['pool'].sum())}",
+                f"{piscine_tue / JT['pool'].sum():.0%} des logements avec piscine".replace("%", " %"), delta_color="off")
+    c[1].metric("Front de mer non mis en avant", f"{mer_tue} sur {int(JT['waterfront'].sum())}",
+                "ni la mer ni la plage selon Jev", delta_color="off")
+
+    st.divider()
+    st.markdown("**Fiche conseil : auditer le titre d'une annonce**")
+    choix = st.selectbox("Annonce", JT.sort_values("listing_name")["listing_name"].unique(),
+                         index=int(np.where(np.sort(JT["listing_name"].unique()) == "Villa UHAINA")[0][0]))
+    r = JT[JT["listing_name"] == choix].iloc[0]
+    g, d = st.columns([1, 1])
+    lectures = pd.DataFrame({"Question": ["Vue mer", "Plage", "Luxe", "Simple", "Famille", "Couple", "Groupe", "Attrait (÷ 4)"],
+                             "Probabilité": [r.j_vue_mer, r.j_plage, r.j_luxe, r.j_simple, r.j_famille, r.j_couple,
+                                             r.j_groupe, r.j_attrait / 4]})
+    g.altair_chart(alt.Chart(lectures).mark_bar(color=SARCELLE).encode(
+        x=alt.X("Probabilité:Q", scale=alt.Scale(domain=[0, 1])), y=alt.Y("Question:N", sort=None, title=None),
+        tooltip=[alt.Tooltip("Probabilité:Q", format=".2f")]))
+    oublis = []
+    if r.pool == 1 and r.t_pool == 0:
+        oublis.append("le logement a une piscine, le titre ne la cite pas")
+    if r.waterfront == 1 and r.j_plage < 0.5 and r.j_vue_mer < 0.5:
+        oublis.append("le logement est en front de mer, le titre ne met en avant ni la mer ni la plage")
+    if r.j_attrait < 1.5:
+        oublis.append(f"attrait jugé faible ({r.j_attrait:.1f} sur 4) : titre vague ou générique".replace(".", ","))
+    d.markdown(f"**{choix}** · {r.locality}, {int(r.bedrooms)} chambre(s), revenu observé {eur(r.ttm_revenue)}")
+    if oublis:
+        d.markdown("Points à corriger :\n" + "\n".join(f"- {o}" for o in oublis))
+    else:
+        d.markdown("Aucun oubli détecté sur la piscine, la mer ou l'attrait du titre.")
+    f = JR["fiche"]
+    if choix == f["avant"]["titre"]:
+        v = lambda x, n: f"{x:.{n}f}".replace(".", ",")
+        d.info(f"Titre proposé : **{f['apres']['titre']}**. Jev : attrait {v(f['avant']['attrait'], 1)} → "
+               f"{v(f['apres']['attrait'], 1)} sur 4, plage {v(f['avant']['plage'], 2)} → {v(f['apres']['plage'], 2)}.")
+    st.caption("Réponses de Jev précalculées (jev-1.14.0, novembre 2026) : l'application n'appelle pas l'API. "
+               "Les écarts de revenu associés au titre sont des associations, pas des effets causaux.")
+
+# ------------------------------------------------------------------ 6. LIMITES
 else:
     st.title("Limites et perspectives")
     a, b = st.columns(2)
@@ -305,6 +389,7 @@ else:
 **Perspectives**
 - Enrichir avec les variables AirROI non exportées (type de bien, notes, coordonnées GPS, nombre de lits).
 - Analyser les descriptions et les avis par text mining, au-delà du titre.
+- Audit du titre en direct dans le simulateur, avec Jev (piste testée en page 5).
 - Géolocalisation fine : distance à la plage, quartiers.
 - Données temporelles : saisonnalité, performances à 90 jours.
 - Sélection de comparables par proximité et similarité.

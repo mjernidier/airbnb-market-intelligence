@@ -49,7 +49,7 @@ Un modèle Ridge entraîné sur les mêmes variables sert à lire les effets en 
 | Chemin | Contenu |
 |---|---|
 | `notebooks/airbnb_market_intelligence.ipynb` | Le projet complet : nettoyage, exploration, modélisation, pistes testées, modèle amélioré |
-| `app/app.py` | Application Streamlit (exploration du marché, modèles, simulateur) |
+| `app/app.py` | Application Streamlit (exploration du marché, modèles, simulateur, audit des titres avec Jev) |
 | `app/pipeline.py` | Nettoyage, construction des variables et définition des modèles, partagés par l'application |
 | `app/preparer_modeles.py` | Évaluation et sauvegarde des modèles utilisés par l'application |
 | `app/data/riviera_du_levant.csv` | Export brut AirROI |
