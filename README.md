@@ -49,7 +49,8 @@ Un modèle Ridge entraîné sur les mêmes variables sert à lire les effets en 
 | Chemin | Contenu |
 |---|---|
 | `notebooks/airbnb_market_intelligence.ipynb` | Le projet complet : nettoyage, exploration, modélisation, pistes testées, modèle amélioré |
-| `app/app.py` | Application Streamlit (exploration du marché, modèles, simulateur, audit des titres avec Jev) |
+| `app/app.py` | Application Streamlit (exploration du marché, modèles, simulateur, audit des titres avec Jev, assistant) |
+| `app/assistant.py` | Assistant de questions business et data : réponses calculées sur les données et le modèle |
 | `app/pipeline.py` | Nettoyage, construction des variables et définition des modèles, partagés par l'application |
 | `app/preparer_modeles.py` | Évaluation et sauvegarde des modèles utilisés par l'application |
 | `app/data/riviera_du_levant.csv` | Export brut AirROI |
@@ -71,6 +72,12 @@ L'application est déployée sur Streamlit Community Cloud : https://airbnb-mark
 Les modèles sont fournis dans `app/artefacts/`. S'ils sont incompatibles avec les versions installées de scikit-learn ou de xgboost, l'application les entraîne de nouveau au démarrage. Pour tout recalculer, y compris la validation imbriquée (quelques minutes) :
 
     python preparer_modeles.py
+
+## Assistant
+
+La page 7 de l'application répond en français à des questions business (revenus par commune ou par taille, effet d'un équipement, estimation d'un logement, conseils, audit d'un titre) et data (précision, comparaison des modèles, variables importantes, validation, limites). Chaque réponse est calculée sur les annonces nettoyées, le modèle XGBoost ou les métriques de validation : aucun chiffre n'est rédigé librement, et les questions hors sujet ou portant sur une donnée absente sont refusées.
+
+La compréhension de la question passe par Jev (TypeSafe), qui classe la question et renvoie une probabilité calibrée, pour environ 0,00006 $ par question. Sans clé, des règles par mots-clés prennent le relais. Pour activer Jev, ajouter `TYPESAFE_API_KEY = "..."` dans `app/.streamlit/secrets.toml` (exclu du dépôt) ou dans les secrets de Streamlit Community Cloud.
 
 ## Exécuter le notebook
 

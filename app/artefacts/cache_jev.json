@@ -1,0 +1,1782 @@
+{
+"intention|bonjour, que sais-tu faire ?": {
+"sujet": {
+"type": "choice",
+"choice": "aide",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 1.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quelle commune rapporte le plus ?": {
+"sujet": {
+"type": "choice",
+"choice": "communes",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 1.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|combien rapporte un t2 a sainte-anne avec piscine ?": {
+"sujet": {
+"type": "choice",
+"choice": "estimation",
+"confidence": 0.89,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.08,
+"impact": 0.02,
+"estimation": 0.9,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|la piscine vaut-elle le coup ?": {
+"sujet": {
+"type": "choice",
+"choice": "impact",
+"confidence": 0.97,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.97,
+"estimation": 0.0,
+"conseils": 0.03,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quels equipements rapportent le plus ?": {
+"sujet": {
+"type": "choice",
+"choice": "impact",
+"confidence": 0.98,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.98,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.02,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|j'ai un studio au gosier sans piscine, que faire pour gagner plus ?": {
+"sujet": {
+"type": "choice",
+"choice": "conseils",
+"confidence": 0.98,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.02,
+"estimation": 0.0,
+"conseils": 0.98,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|analyse le titre « villa vue mer avec piscine privee a saint-francois »": {
+"sujet": {
+"type": "choice",
+"choice": "titre",
+"confidence": 0.95,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.01,
+"estimation": 0.04,
+"conseils": 0.0,
+"titre": 0.95,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"titre|villa vue mer avec piscine privée à saint-françois": {
+"standing": {
+"type": "choice",
+"choice": "luxe",
+"confidence": 0.55,
+"probabilities": {
+"luxe": 0.7,
+"confort": 0.3,
+"simple": 0.0
+}
+},
+"vue_mer": {
+"type": "noul",
+"noul": 0.97
+},
+"plage": {
+"type": "noul",
+"noul": 0.2
+},
+"cible": {
+"type": "choice",
+"choice": "non_precise",
+"confidence": 0.87,
+"probabilities": {
+"famille": 0.02,
+"couple": 0.06,
+"groupe": 0.02,
+"non_precise": 0.9
+}
+},
+"attrait": {
+"type": "score",
+"score": 2.95,
+"confidence": 0.83,
+"legend": {
+"0": "très faible : titre vague ou générique",
+"1": "faible",
+"2": "moyen",
+"3": "fort",
+"4": "très fort : arguments concrets et différenciants"
+},
+"probabilities": {
+"0": 0.0,
+"1": 0.0,
+"2": 0.12,
+"3": 0.8,
+"4": 0.08
+}
+}
+},
+"intention|quelle est la precision du modele ?": {
+"sujet": {
+"type": "choice",
+"choice": "performance",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 1.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|pourquoi xgboost plutot qu'un autre modele ?": {
+"sujet": {
+"type": "choice",
+"choice": "comparaison",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 1.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quelles variables comptent le plus ?": {
+"sujet": {
+"type": "choice",
+"choice": "importance",
+"confidence": 0.99,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.01,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.99,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|comment avez-vous evite le surapprentissage ?": {
+"sujet": {
+"type": "choice",
+"choice": "validation",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 1.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quelles sont les limites du modele ?": {
+"sujet": {
+"type": "choice",
+"choice": "limites",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 1.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quel prix par nuit faut-il fixer ?": {
+"sujet": {
+"type": "choice",
+"choice": "donnee_absente",
+"confidence": 0.9,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.01,
+"conseils": 0.08,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.91,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quel est le revenu moyen d'un airbnb ici ?": {
+"sujet": {
+"type": "choice",
+"choice": "marche",
+"confidence": 0.99,
+"probabilities": {
+"marche": 0.99,
+"communes": 0.01,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|combien gagne une villa de 3 chambres avec piscine et jacuzzi a saint-francois ?": {
+"sujet": {
+"type": "choice",
+"choice": "estimation",
+"confidence": 0.99,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.01,
+"impact": 0.0,
+"estimation": 0.99,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|est-ce que la climatisation augmente les revenus ?": {
+"sujet": {
+"type": "choice",
+"choice": "impact",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 1.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|gosier ou saint-francois pour investir ?": {
+"sujet": {
+"type": "choice",
+"choice": "communes",
+"confidence": 0.52,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.55,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.45,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|revenu median a sainte-anne": {
+"sujet": {
+"type": "choice",
+"choice": "communes",
+"confidence": 0.97,
+"probabilities": {
+"marche": 0.03,
+"communes": 0.97,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|combien rapporte un logement de 4 chambres ?": {
+"sujet": {
+"type": "choice",
+"choice": "chambres",
+"confidence": 0.77,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.78,
+"impact": 0.0,
+"estimation": 0.22,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|etre superhost, ca change quoi ?": {
+"sujet": {
+"type": "choice",
+"choice": "impact",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 1.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|le lave-vaisselle a-t-il un effet ?": {
+"sujet": {
+"type": "choice",
+"choice": "impact",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 1.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quelles sont les meilleures annonces ?": {
+"sujet": {
+"type": "choice",
+"choice": "top",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 1.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|d'ou viennent les donnees ?": {
+"sujet": {
+"type": "choice",
+"choice": "donnees",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 1.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|ecris-moi un poeme sur la mer": {
+"sujet": {
+"type": "choice",
+"choice": "hors_perimetre",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 1.0
+}
+}
+},
+"intention|combien d'annonces avez-vous retirees au nettoyage ?": {
+"sujet": {
+"type": "choice",
+"choice": "donnees",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 1.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|le modele est-il fiable pour un bien neuf ?": {
+"sujet": {
+"type": "choice",
+"choice": "performance",
+"confidence": 0.64,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.66,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.34,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|c'est quoi jev ?": {
+"sujet": {
+"type": "choice",
+"choice": "jev",
+"confidence": 0.83,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.01,
+"comparaison": 0.0,
+"importance": 0.01,
+"limites": 0.0,
+"donnees": 0.01,
+"validation": 0.0,
+"jev": 0.84,
+"description": 0.01,
+"donnee_absente": 0.0,
+"aide": 0.01,
+"hors_perimetre": 0.11
+}
+}
+},
+"intention|quel est le taux d'occupation moyen ?": {
+"sujet": {
+"type": "choice",
+"choice": "donnee_absente",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 1.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|une chambre de plus, ca rapporte combien ?": {
+"sujet": {
+"type": "choice",
+"choice": "chambres",
+"confidence": 0.82,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.83,
+"impact": 0.17,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|les mots du titre ont-ils un impact ?": {
+"sujet": {
+"type": "choice",
+"choice": "titre",
+"confidence": 0.87,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.08,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.88,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.04,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|est-ce que la vue mer augmente le revenu ?": {
+"sujet": {
+"type": "choice",
+"choice": "impact",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 1.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|j'ai un appartement de 2 chambres a saint-francois avec piscine, combien puis-je esperer ?": {
+"sujet": {
+"type": "choice",
+"choice": "estimation",
+"confidence": 0.99,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.01,
+"impact": 0.0,
+"estimation": 0.99,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quel est le r² ?": {
+"sujet": {
+"type": "choice",
+"choice": "performance",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 1.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|le modele sous-estime-t-il les villas de luxe ?": {
+"sujet": {
+"type": "choice",
+"choice": "limites",
+"confidence": 0.86,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.01,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.12,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.87,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|que vaut random forest ici ?": {
+"sujet": {
+"type": "choice",
+"choice": "comparaison",
+"confidence": 0.95,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.05,
+"comparaison": 0.95,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|est-ce que le jacuzzi vaut le coup a saint-francois ?": {
+"sujet": {
+"type": "choice",
+"choice": "impact",
+"confidence": 0.89,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.9,
+"estimation": 0.0,
+"conseils": 0.1,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|does a pool increase revenue?": {
+"sujet": {
+"type": "choice",
+"choice": "impact",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 1.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|combien je peux gagner avec ma maison 2 ch a ste anne": {
+"sujet": {
+"type": "choice",
+"choice": "estimation",
+"confidence": 0.87,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.12,
+"impact": 0.0,
+"estimation": 0.88,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quel est le meilleur investissement pour un proprio ?": {
+"sujet": {
+"type": "choice",
+"choice": "conseils",
+"confidence": 0.94,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.06,
+"estimation": 0.0,
+"conseils": 0.94,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|c koi le r2 ?": {
+"sujet": {
+"type": "choice",
+"choice": "performance",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 1.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|pourquoi pas un reseau de neurones ?": {
+"sujet": {
+"type": "choice",
+"choice": "comparaison",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 1.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|comment le modele a-t-il ete valide ?": {
+"sujet": {
+"type": "choice",
+"choice": "validation",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 1.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|le studio est-il rentable ?": {
+"sujet": {
+"type": "choice",
+"choice": "donnee_absente",
+"confidence": 0.46,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.39,
+"impact": 0.0,
+"estimation": 0.08,
+"conseils": 0.04,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.49,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quels sont les revenus d'une villa avec 5 chambres au gosier ?": {
+"sujet": {
+"type": "choice",
+"choice": "estimation",
+"confidence": 0.81,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.01,
+"chambres": 0.17,
+"impact": 0.0,
+"estimation": 0.82,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|peux-tu me donner le code python du modele ?": {
+"sujet": {
+"type": "choice",
+"choice": "hors_perimetre",
+"confidence": 0.7,
+"probabilities": {
+"marche": 0.01,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.01,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.04,
+"comparaison": 0.04,
+"importance": 0.01,
+"limites": 0.0,
+"donnees": 0.02,
+"validation": 0.12,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.03,
+"hors_perimetre": 0.72
+}
+}
+},
+"intention|quelle est la capitale de la guadeloupe ?": {
+"sujet": {
+"type": "choice",
+"choice": "hors_perimetre",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 1.0
+}
+}
+},
+"intention|est-ce que je dois devenir superhost ?": {
+"sujet": {
+"type": "choice",
+"choice": "impact",
+"confidence": 0.62,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.64,
+"estimation": 0.0,
+"conseils": 0.36,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quel est l'ecart de revenu entre sainte-anne et le gosier ?": {
+"sujet": {
+"type": "choice",
+"choice": "communes",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 1.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|y a-t-il un biais dans les donnees ?": {
+"sujet": {
+"type": "choice",
+"choice": "limites",
+"confidence": 0.98,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.98,
+"donnees": 0.02,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|combien de voyageurs accueille un logement moyen ?": {
+"sujet": {
+"type": "choice",
+"choice": "description",
+"confidence": 0.99,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.99,
+"donnee_absente": 0.01,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|vaut-il mieux une piscine ou un jacuzzi ?": {
+"sujet": {
+"type": "choice",
+"choice": "impact",
+"confidence": 0.83,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.84,
+"estimation": 0.0,
+"conseils": 0.16,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|note mon titre \"cosy studio near the beach\"": {
+"sujet": {
+"type": "choice",
+"choice": "titre",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 1.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"titre|cosy studio near the beach": {
+"standing": {
+"type": "choice",
+"choice": "simple",
+"confidence": 0.49,
+"probabilities": {
+"luxe": 0.0,
+"confort": 0.34,
+"simple": 0.66
+}
+},
+"vue_mer": {
+"type": "noul",
+"noul": 0.16
+},
+"plage": {
+"type": "noul",
+"noul": 0.73
+},
+"cible": {
+"type": "choice",
+"choice": "couple",
+"confidence": 0.67,
+"probabilities": {
+"famille": 0.0,
+"couple": 0.75,
+"groupe": 0.0,
+"non_precise": 0.25
+}
+},
+"attrait": {
+"type": "score",
+"score": 0.61,
+"confidence": 0.6,
+"legend": {
+"0": "très faible : titre vague ou générique",
+"1": "faible",
+"2": "moyen",
+"3": "fort",
+"4": "très fort : arguments concrets et différenciants"
+},
+"probabilities": {
+"0": 0.43,
+"1": 0.52,
+"2": 0.05,
+"3": 0.0,
+"4": 0.0
+}
+}
+},
+"intention|merci beaucoup !": {
+"sujet": {
+"type": "choice",
+"choice": "aide",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 1.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quel salaire pour un data scientist ?": {
+"sujet": {
+"type": "choice",
+"choice": "hors_perimetre",
+"confidence": 0.99,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.01,
+"aide": 0.0,
+"hors_perimetre": 0.99
+}
+}
+},
+"intention|combien rapporte un bungalow avec piscine a saint-francois ?": {
+"sujet": {
+"type": "choice",
+"choice": "estimation",
+"confidence": 0.95,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.01,
+"chambres": 0.0,
+"impact": 0.04,
+"estimation": 0.95,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|les avis comptent-ils ?": {
+"sujet": {
+"type": "choice",
+"choice": "impact",
+"confidence": 0.8,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.81,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.16,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.03,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quelle part des annonces a une piscine ?": {
+"sujet": {
+"type": "choice",
+"choice": "description",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 1.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|quelle est l'erreur moyenne en euros ?": {
+"sujet": {
+"type": "choice",
+"choice": "performance",
+"confidence": 1.0,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.0,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 1.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|combien d'annonces ont un jacuzzi a sainte-anne ?": {
+"sujet": {
+"type": "choice",
+"choice": "description",
+"confidence": 0.79,
+"probabilities": {
+"marche": 0.03,
+"communes": 0.03,
+"chambres": 0.0,
+"impact": 0.14,
+"estimation": 0.0,
+"conseils": 0.0,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.8,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+},
+"intention|sainte-anne ou saint-francois ?": {
+"sujet": {
+"type": "choice",
+"choice": "communes",
+"confidence": 0.99,
+"probabilities": {
+"marche": 0.0,
+"communes": 0.99,
+"chambres": 0.0,
+"impact": 0.0,
+"estimation": 0.0,
+"conseils": 0.01,
+"titre": 0.0,
+"top": 0.0,
+"performance": 0.0,
+"comparaison": 0.0,
+"importance": 0.0,
+"limites": 0.0,
+"donnees": 0.0,
+"validation": 0.0,
+"jev": 0.0,
+"description": 0.0,
+"donnee_absente": 0.0,
+"aide": 0.0,
+"hors_perimetre": 0.0
+}
+}
+}
+}

@@ -9,3 +9,7 @@ venv/
 app/data/riviera_du_levant_cleaned.csv
 app/data/*.pkl
 app/data/*.png
+
+# secrets (clé Jev)
+.streamlit/secrets.toml
+**/.streamlit/secrets.toml

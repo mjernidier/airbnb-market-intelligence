@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
+import assistant as A
 import pipeline as P
 
 ICI = Path(__file__).parent
@@ -76,7 +77,7 @@ st.sidebar.title("Airbnb Market Intelligence")
 st.sidebar.caption("Riviera du Levant, Guadeloupe · Le Gosier, Sainte-Anne, Saint-François")
 page = st.sidebar.radio("Navigation", ["1 · Le projet", "2 · Market Explorer",
                                        "3 · Modèles", "4 · Property Simulator",
-                                       "5 · Audit des titres (Jev)", "6 · Limites"])
+                                       "5 · Audit des titres (Jev)", "6 · Limites", "7 · Assistant"])
 st.sidebar.divider()
 st.sidebar.caption(f"{len(df):,} annonces · source AirROI · modèles {origine}".replace(",", " "))
 st.sidebar.caption("Marvin Jernidier · MJ Metrix")
@@ -372,7 +373,7 @@ Les probabilités deviennent huit variables, testées avec le protocole officiel
                "Les écarts de revenu associés au titre sont des associations, pas des effets causaux.")
 
 # ------------------------------------------------------------------ 6. LIMITES
-else:
+elif page.startswith("6"):
     st.title("Limites et perspectives")
     a, b = st.columns(2)
     a.markdown("""
@@ -396,3 +397,77 @@ else:
 - Modéliser les coûts pour passer du revenu au rendement.
 - Intervalles de prédiction (régression quantile).
 """)
+
+# ------------------------------------------------------------------ 7. ASSISTANT
+else:
+    @st.cache_resource
+    def client_jev():
+        """Un seul client par serveur : le budget d'appels protège le crédit, le cache évite de payer deux fois."""
+        try:
+            cle = st.secrets.get("TYPESAFE_API_KEY")
+        except Exception:
+            cle = None
+        return A.Jev(cle=cle, chemin_cache=ART / "cache_jev.json", budget=500)
+
+    @st.cache_data
+    def resultats_jev():
+        JR = json.loads((ART / "jev_resultats.json").read_text(encoding="utf-8"))
+        JT = pd.read_csv(ART / "jev_titres.csv", encoding="utf-8-sig")
+        return JR, JT
+
+    jev = client_jev()
+    st.title("Assistant : questions business et data")
+    st.caption("Chaque chiffre est calculé à la demande sur les 1 163 annonces nettoyées, le modèle XGBoost ou les métriques "
+               "de validation : aucun texte n'est rédigé par un modèle génératif. Jev (TypeSafe) sert uniquement à comprendre "
+               "la question et à écarter celles qui sortent du sujet ; sans clé API, des règles par mots-clés prennent le relais.")
+    h1, h2 = st.columns([3, 2])
+    avec_jev = h2.toggle("Compréhension par Jev", value=bool(jev.cle), disabled=not jev.cle,
+                         help="Désactivé : règles par mots-clés uniquement, sans réseau.")
+    if not jev.cle:
+        h1.info("Mode hors ligne : pas de clé Jev configurée, les questions sont comprises par des règles.")
+    elif avec_jev:
+        h1.success(f"Jev actif · {jev.appels} appel(s) depuis le démarrage, environ {A.dec(jev.cout_usd, 4)} $ · "
+                   f"{len(jev.cache)} questions en cache (gratuites)")
+    else:
+        h1.info("Jev désactivé : démonstration du mode de secours, sans réseau.")
+    # L'assistant reçoit les données, les modèles et les métriques déjà chargés par l'application
+    JR, JT = resultats_jev()
+    assistant = A.Assistant(df, xgb, ridge, M, COEFS, ECHELLE, JR, JT, jev if avec_jev else None)
+
+    if "chat" not in st.session_state:
+        st.session_state.chat = []
+
+    def poser(question):
+        r = assistant.repondre(question)
+        st.session_state.chat.append({"q": question, "r": r})
+
+    st.markdown("**Questions types**")
+    cols = st.columns(2)
+    for col, (famille, questions) in zip(cols, A.QUESTIONS_TYPES.items()):
+        col.caption(famille)
+        for i, q in enumerate(questions):
+            if col.button(q, key=f"qt_{famille}_{i}", use_container_width=True):
+                poser(q)
+
+    question = st.chat_input("Posez une question sur le marché, les équipements ou le modèle")
+    if question:
+        poser(question)
+
+    for echange in reversed(st.session_state.chat):
+        r = echange["r"]
+        with st.chat_message("user"):
+            st.write(echange["q"])
+        with st.chat_message("assistant"):
+            st.write(r.texte)
+            if r.tableau is not None:
+                st.dataframe(r.tableau, hide_index=True)
+            compris = A.LIBELLES_INTENTIONS.get(r.intention, "question à préciser")
+            detail = f"Compris comme : {compris} · {r.comprise_par}"
+            if r.confiance is not None:
+                detail += f", confiance {A.dec(r.confiance, 2)}"
+            if r.source:
+                detail += f" · Source : {r.source}"
+            st.caption(detail)
+    if st.session_state.chat and st.button("Effacer la conversation"):
+        st.session_state.chat = []
+        st.rerun()
